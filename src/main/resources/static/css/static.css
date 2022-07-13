@@ -1,0 +1,37 @@
+body {
+	font-family: 'Mukta', sans-serif;
+	background-color: #EBE9E9;
+	margin:0;
+	padding:0;
+}
+#navbar{
+	background-color:#4056F4;
+}
+
+nav #navbarNav ul li a{
+	color:#EBE9E9;
+	margin-bottom:0px;
+	padding-bottom:0.1rem;
+}
+
+nav #navbarNav ul li{
+	padding-bottom: 0.25rem;
+}
+
+#active{
+	color:#EBE9E9;
+	border-bottom: 0.1rem solid #EBE9E9;
+}
+
+footer{
+	background-color:#7A7A7A;
+	color:#EBE9E9;
+}
+
+#btn{
+	padding:6px 16px;
+	border: none;
+	background-color: #4056F4;
+	border-radius: 0.2rem;
+	color: #EBE9E9;
+}

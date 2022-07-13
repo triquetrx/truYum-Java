@@ -1,0 +1,12 @@
+<script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.6.1/js/bootstrap.min.js"></script>
+<script>
+	if(window.location.pathname.includes("add-admin-items")){
+		document.getElementById("add").style.borderBottom="0.1rem solid #EBE9E9";
+	}
+	else{
+		document.getElementById("menu").style.borderBottom="0.1rem solid #EBE9E9";
+	}
+</script>
+</body>
+</html>
