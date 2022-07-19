@@ -32,8 +32,8 @@ public class MenuItemsService {
 		MenuItems item = getProduct(id);
 		item.setCategory(Category);
 		item.setDateOfLaunch(DateOfLaunch);
-		item.setIsFreeDelivery(isFreeDelivery);
-		item.setIsActive(isActive);
+		item.setFreeDelivery(isFreeDelivery);
+		item.setActive(isActive);
 		item.setName(name);
 		item.setPrice(price);
 		repos.save(item);

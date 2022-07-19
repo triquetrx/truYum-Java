@@ -16,12 +16,12 @@
 			</thead>
 			<tbody>
 			<c:forEach items="${menuCustomer}" var="menu">
-			<c:if test="${menu.getIsActive()}">			
+			<c:if test="${menu.isActive()}">			
 				<tr>
 					<td>${menu.getName()}</td>
 					<td>
-						<c:if test="${menu.getIsFreeDelivery()}">Yes</c:if>
-						<c:if test="${not menu.getIsFreeDelivery()}">No</c:if>						
+						<c:if test="${menu.isFreeDelivery()}">Yes</c:if>
+						<c:if test="${not menu.isFreeDelivery()}">No</c:if>						
 					</td>
 					<td>${menu.getPrice()}</td>
 					<td>${menu.getCategory()}</td>

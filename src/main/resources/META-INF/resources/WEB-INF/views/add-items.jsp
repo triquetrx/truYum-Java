@@ -17,8 +17,8 @@
 			<form:errors cssClass="text-warning" path="price"/>
 		</div>
 		<div class="form-group col-md">
-			<form:label path="isActive">Active</form:label>
-			<form:select cssClass="form-control" path="isActive" items="${activeList}"/>
+			<form:label path="active">Active</form:label>
+			<form:select cssClass="form-control" path="active" items="${activeList}"/>
 		</div>
 		<div class="form-group col-md">
 			<form:label path="dateOfLaunch">Date of Launch</form:label>
@@ -32,8 +32,8 @@
 		</div>
 		</div>
 		<div class="form-check">
-			<form:checkbox cssClass="form-check-input" id="freeDelivery" path="isFreeDelivery" />
-			<form:label path="isFreeDelivery" for="freeDelivery" cssClass="form-check-label">Free Delivery</form:label>
+			<form:checkbox cssClass="form-check-input" id="freeDelivery" path="freeDelivery" />
+			<form:label path="freeDelivery" for="freeDelivery" cssClass="form-check-label">Free Delivery</form:label>
 		</div>
 		<br/>
 		<form:button name="submit" id="btn">Submit</form:button>

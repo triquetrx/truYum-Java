@@ -21,14 +21,14 @@
 					<td>${menu.getName()}</td>
 					<td>${menu.getPrice()}</td>
 					<td>
-						<c:if test="${menu.getIsActive()}">Yes</c:if>
-						<c:if test="${not menu.getIsActive()}">No</c:if>						
+						<c:if test="${menu.isActive()}">Yes</c:if>
+						<c:if test="${not menu.isActive()}">No</c:if>						
 					</td>
 					<td>${menu.getDateOfLaunch()}</td>
 					<td>${menu.getCategory()}</td>
 					<td>
-						<c:if test="${menu.getIsFreeDelivery()}">Yes</c:if>
-						<c:if test="${not menu.getIsFreeDelivery()}">No</c:if>						
+						<c:if test="${menu.isFreeDelivery()}">Yes</c:if>
+						<c:if test="${not menu.isFreeDelivery()}">No</c:if>						
 					</td>
 					<td><a href="/edit-admin?id=${menu.getItemId()}">Edit</a></td>
 				</tr>

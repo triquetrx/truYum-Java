@@ -1,5 +1,6 @@
 package com.example.truyum.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,43 +9,25 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
 @Table
-@SuppressWarnings("unused")
-public class CartItems {
+public @Data @NoArgsConstructor class CartItems {
 
 	@Id
+	@Column(name="cart_product_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long cartProductId;
+	private long cartId;
 	private long userId;
 	@OneToOne
 	@JoinColumn(name = "menu_item_id")
-	private MenuItems menuItem;
+	private MenuItems menu;
 
-	public CartItems() {
+	public CartItems(MenuItems menu) {
 		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public CartItems(MenuItems menuItem) {
-		super();
-		this.menuItem = menuItem;
+		this.menu = menu;
 		this.userId = 1;
-	}
-
-	public long getCart_id() {
-		return cartProductId;
-	}
-
-	public void setCart_id(long cartProductId) {
-		this.cartProductId = cartProductId;
-	}
-
-	public MenuItems getMenu() {
-		return menuItem;
-	}
-
-	public void setMenu(MenuItems menuItem) {
-		this.menuItem = menuItem;
 	}
 }

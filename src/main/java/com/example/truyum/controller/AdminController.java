@@ -3,6 +3,8 @@ package com.example.truyum.controller;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -42,10 +44,11 @@ public class AdminController {
 		return "add-items";
 	}
 
-	@RequestMapping("edit-admin")
+	@RequestMapping(value = "edit-admin",method = RequestMethod.GET)
 	public String editProduct(ModelMap model,@RequestParam long id) {
 		model.put("categoryList", listUtil.getCategoryList());
 		model.put("activeList", listUtil.getActiveList());
+		model.addAttribute("itemId", id);
 		model.put("editItem", service.getProduct(id));
 		return "edit-admin";
 	}
@@ -55,7 +58,9 @@ public class AdminController {
 		if(result.hasErrors()) {
 			return "edit-admin";
 		}
-		service.editItem(menu.getItemId(),menu.getName(), menu.getPrice(), menu.getIsActive(), menu.getDateOfLaunch(), menu.getCategory(), menu.getIsFreeDelivery());
+		Logger log = LoggerFactory.getLogger(getClass());
+		log.info(model.getAttribute("editItem").toString());
+		service.editItem(menu.getItemId(),menu.getName(), menu.getPrice(), menu.isActive(), menu.getDateOfLaunch(), menu.getCategory(), menu.isFreeDelivery());
 		return "redirect:menu-item-list-admin";
 	}
 	
@@ -66,7 +71,7 @@ public class AdminController {
 			return "add-items";
 		}
 		// String name,double price,String isActive,Date DateOfLaunch,String Category,boolean isFreeDelivery
-		service.addNewItem(menu.getName(), menu.getPrice(), menu.getIsActive(), menu.getDateOfLaunch(), menu.getCategory(), menu.getIsFreeDelivery());
+		service.addNewItem(menu.getName(), menu.getPrice(), menu.isActive(), menu.getDateOfLaunch(), menu.getCategory(), menu.isFreeDelivery());
 		return "redirect:menu-item-list-admin";
 	}
 }
