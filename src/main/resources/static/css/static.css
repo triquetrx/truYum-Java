@@ -24,8 +24,13 @@ nav #navbarNav ul li{
 }
 
 footer{
+	position: fixed;
+	left:0;
+	bottom: 0;
+	width:100vw;
 	background-color:#7A7A7A;
 	color:#EBE9E9;
+	padding: 0.7rem;
 }
 
 #btn{
