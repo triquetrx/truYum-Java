@@ -9,6 +9,7 @@
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item"><a class="nav-link" href="/menu-item-list-admin" id="menu">Menu</a></li>
 			<li class="nav-item"><a class="nav-link" href="/add-admin-items" id="add">Add</a></li>
+			<li class="nav-item"><a class="nav-link" href="/logout" id="cart">Logout</a></li>
 		</ul>
 	</div>
 </nav>

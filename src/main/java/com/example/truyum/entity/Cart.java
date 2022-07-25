@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table
-public @Data @NoArgsConstructor class CartItems {
+public @Data @NoArgsConstructor class Cart {
 
 	@Id
 	@Column(name="cart_product_id")
@@ -25,9 +25,9 @@ public @Data @NoArgsConstructor class CartItems {
 	@JoinColumn(name = "menu_item_id")
 	private MenuItems menu;
 
-	public CartItems(MenuItems menu) {
+	public Cart(MenuItems menu) {
 		super();
 		this.menu = menu;
-		this.userId = 1;
+		this.userId = 1L;
 	}
 }
